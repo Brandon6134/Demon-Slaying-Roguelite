@@ -1,84 +1,57 @@
 using UnityEditor.Callbacks;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using System;
 
 public class PlayerController : MonoBehaviour
 {
-    public float speed = 10f;
+    public float playerSpeed;
     private Rigidbody2D playerRb;
-    private SpriteRenderer spriteRd;
-    private Vector2 input;
-    
-    private float timeBtwAttack; //attack timer
-    public float startTimeBtwAttack;
-    public Transform attackPos;
-    public LayerMask whatIsEnemies;
-    public float attackRange;
-    public int damage;
-    private AudioSource audioSource;
-    public AudioClip hitSwordSlashSFX;
-    public AudioClip missSwordSlashSFX;
+    private Vector2 playerInput;
+    BasicAttack basicAttack;
+    Dash dash;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
-        spriteRd = GetComponent<SpriteRenderer>();
-        audioSource = GetComponent<AudioSource>();
+        
+        basicAttack = GetComponent<BasicAttack>();
+        dash = GetComponent<Dash>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        input.x = Input.GetAxis("Horizontal");
-        input.y = Input.GetAxis("Vertical");
+        playerInput = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
+
+        basicAttack.Tick();
+        dash.Tick();
+
+        if (Input.GetMouseButtonDown(0))
+            basicAttack.TryActivate();
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+            dash.TryActivate();
     }
 
     void FixedUpdate()
     {
-        playerRb.linearVelocity = input*speed;
-        attack();
-        flipSprite();
+        if (!dash.IsDashing())
+            playerRb.linearVelocity = playerInput*playerSpeed; 
+
+        FlipSprite(); 
     }
-
-    void attack()
+    
+    public Vector2 GetPlayerInput()
     {
-        if (timeBtwAttack <= 0) //if can attack
-        {
-            if (Input.GetKey(KeyCode.Space))
-            {
-                
-                Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position,attackRange,whatIsEnemies);
-                for (int i = 0; i < enemiesToDamage.Length; i++) //make all enemies in circle hitbox take damage
-                {
-                    enemiesToDamage[i].GetComponent<DemonBehaviour>().TakeDamage(damage);
-                }
-
-                //plays correct sword slash sfx if enemy hit or missed
-                if (enemiesToDamage.Length==0)
-                    audioSource.PlayOneShot(missSwordSlashSFX);
-                else
-                    audioSource.PlayOneShot(hitSwordSlashSFX);
-                
-                timeBtwAttack = startTimeBtwAttack; //reset time attack timer 
-            }        
-            
-        }
-        else
-            timeBtwAttack -= Time.deltaTime; //countdown attack timer
-
+        return playerInput;
     }
-
-    void OnDrawGizmosSelected() //make circle hitbox visible in editor
+    void FlipSprite()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPos.position,attackRange);
-    }
-
-    void flipSprite()
-    {
-        if (input.x > 0f)
+        if (playerInput.x > 0f)
             transform.localScale = new Vector3(1,1,1);
-        else if (input.x < 0f)
+        else if (playerInput.x < 0f)
             transform.localScale = new Vector3(-1,1,1);
     }
+
 }
