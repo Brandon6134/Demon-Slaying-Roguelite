@@ -1,9 +1,8 @@
 using UnityEngine;
 
-public class BasicAttack : AttackSchema
+public class ChargeAttack : AttackSchema
 {
-    public AudioClip missSwordSlashSFX;
-    public AudioClip hitSwordSlashSFX;
+    public AudioClip spinAttackSFX;
     public override void TryActivate()
     {
         if (!Ready()) return;
@@ -14,18 +13,14 @@ public class BasicAttack : AttackSchema
             enemiesToDamage[i].GetComponent<DemonBehaviour>().TakeDamage(damage);
         }
 
-        //plays correct sword slash sfx if enemy hit or missed
-        if (enemiesToDamage.Length==0)
-            AudioManager.Instance.PlaySFX(missSwordSlashSFX);
-        else
-            AudioManager.Instance.PlaySFX(hitSwordSlashSFX);
+        AudioManager.Instance.PlaySFX(spinAttackSFX,0.6f);
 
         StartCooldown();
     }
 
     void OnDrawGizmosSelected() //make circle hitbox visible in editor
     {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.blue;
         Gizmos.DrawWireSphere(attackPos.position,attackRange);
     }
 }
