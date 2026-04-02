@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 57059082}
   - component: {fileID: 57059081}
   - component: {fileID: 57059080}
+  - component: {fileID: 57059088}
   - component: {fileID: 57059086}
   - component: {fileID: 57059087}
   m_Layer: 0
@@ -337,6 +338,18 @@ MonoBehaviour:
   cooldown: 0.5
   dashSpeed: 10
   dashDuration: 0.2
+--- !u!114 &57059088
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57059079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a7e9ad4c6f457f40a5e9850ae49ce25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerManager
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -900,7 +913,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPool
   enemyPrefab: {fileID: 2008446783429159003, guid: b46dda38b95ea24449a81a5758e8bb2a, type: 3}
-  poolSize: 5
+  poolSize: 10
 --- !u!4 &1901433833
 Transform:
   m_ObjectHideFlags: 0

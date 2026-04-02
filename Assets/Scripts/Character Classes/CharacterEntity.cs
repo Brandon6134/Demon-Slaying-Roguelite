@@ -10,10 +10,12 @@ public class CharacterEntity : MonoBehaviour
     public float definedHealth = 10f;
     protected float activeHealth;
     public GameObject popupDamageText;
+    protected Rigidbody2D rb;
 
     void Awake()
     {
         activeHealth = definedHealth;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public void TakeDamage(float damage)
@@ -22,7 +24,6 @@ public class CharacterEntity : MonoBehaviour
         Vector3 damageTextPos = gameObject.transform.position + new Vector3(Random.Range(-1f,1f),Random.Range(1f,2f),0);
         GameObject newPopupDamageText = Instantiate(popupDamageText,damageTextPos,Quaternion.identity);
         newPopupDamageText.GetComponent<PopupDamageBehaviour>().SetText(damage);
-        Debug.Log("damage taken! health is now: " + activeHealth);
     }
 
 }

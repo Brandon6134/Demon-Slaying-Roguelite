@@ -107,6 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DemonBehaviour
   definedHealth: 5
   popupDamageText: {fileID: 7947127680326472455, guid: 85454d48f83f4cd4ea8237aea6b79655, type: 3}
+  chaseSpeed: 1
 --- !u!50 &1922145135433530070
 Rigidbody2D:
   serializedVersion: 5
@@ -133,7 +134,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 7
+  m_Constraints: 4
 --- !u!61 &881461346883429954
 BoxCollider2D:
   m_ObjectHideFlags: 0
