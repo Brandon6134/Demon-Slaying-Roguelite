@@ -6,6 +6,7 @@ public class Dash : Ability
     public float dashSpeed;
     public float dashDuration;
     private float dashTimeLeft;
+    public AudioClip dashSFX;
     public override void TryActivate()
     {
         if (!Ready()) return;
@@ -16,6 +17,9 @@ public class Dash : Ability
             dashDirection = new Vector2(player.transform.localScale.x,0f); 
         
         dashTimeLeft = dashDuration;
+
+        AudioManager.Instance.PlaySFX(dashSFX);
+
         StartCooldown();
     }
 
