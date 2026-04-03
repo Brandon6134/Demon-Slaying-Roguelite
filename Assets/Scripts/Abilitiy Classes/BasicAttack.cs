@@ -34,4 +34,9 @@ public class BasicAttack : AttackSchema
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPos.position,attackRange);
     }
+
+    public bool hasEnteredHitbox() //returns true if enemy object is within hitbox range, false if not
+    {
+        return Physics2D.OverlapCircle(attackPos.position,attackRange,enemyLayer);
+    }
 }

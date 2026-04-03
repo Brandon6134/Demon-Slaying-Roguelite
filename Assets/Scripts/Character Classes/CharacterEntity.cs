@@ -30,7 +30,7 @@ public class CharacterEntity : MonoBehaviour
         StartCoroutine(TurnRed());
     }
 
-    IEnumerator TurnRed()
+    IEnumerator TurnRed() //blink the entity red to indicate they've taken damage
     {
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.2f); 

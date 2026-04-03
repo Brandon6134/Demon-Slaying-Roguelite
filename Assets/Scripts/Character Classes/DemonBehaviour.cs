@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
@@ -21,15 +22,17 @@ public class DemonBehaviour : CharacterEntity
     // Update is called once per frame
     void Update()
     {
+        if (gameObject.activeSelf) //if demon is active and not in pool
+            StartCoroutine(DetectPlayer());
+        
         ChasePlayer();
         if (activeHealth<=0f)
             Die();
-        DetectPlayer();
 
         basicAttack.Tick();
     }
 
-    public void Die()
+    public void Die() //make demon "die" and reset health
     {
         enemyPool.DespawnEnemy(gameObject);
         activeHealth = definedHealth;
@@ -41,13 +44,14 @@ public class DemonBehaviour : CharacterEntity
         rb.linearVelocity = chaseDirection * chaseSpeed;
     }
 
-    public void DetectPlayer()
+    IEnumerator DetectPlayer()
     {
-        float distance = Vector2.Distance(playerTransform.position,transform.position);
-        if (distance <= 2f)
+        if (basicAttack.hasEnteredHitbox()) //if player has entered hitbox range, try attacking
         {
+            yield return new WaitForSeconds(0.5f); //buffer of x seconds before try attacking, feels more realistic
             basicAttack.TryActivate();
         }
+            
     }
 
 }
