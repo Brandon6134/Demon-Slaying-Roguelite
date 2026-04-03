@@ -30,12 +30,14 @@ public class PlayerController : MonoBehaviour
     {
         playerInput = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
 
+        if (playerInput != Vector2.zero)
+            PlayerAnimManager.Instance.SetIsWalkinkg(true);
+        else
+            PlayerAnimManager.Instance.SetIsWalkinkg(false);
+
         basicAttack.Tick();
         dash.Tick();
         chargeAttack.Tick();
-
-        // if (Input.GetMouseButtonDown(0))
-        //     basicAttack.TryActivate();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -64,7 +66,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!dash.IsDashing())
             playerRb.linearVelocity = playerInput*playerSpeed; 
-
+        
         FlipSprite(); 
     }
     

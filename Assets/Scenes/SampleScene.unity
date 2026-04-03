@@ -131,11 +131,13 @@ GameObject:
   - component: {fileID: 57059083}
   - component: {fileID: 57059082}
   - component: {fileID: 57059081}
+  - component: {fileID: 57059090}
   - component: {fileID: 57059080}
   - component: {fileID: 57059088}
   - component: {fileID: 57059086}
   - component: {fileID: 57059089}
   - component: {fileID: 57059087}
+  - component: {fileID: 57059091}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -195,8 +197,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0064778, y: 1.0516666}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 0.9, y: 1.2571429}
+    newSize: {x: 1.0064778, y: 1.0516666}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -276,13 +278,13 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 2896251368398260366, guid: 1ded1872b2eda7f41a485b89f3929842, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: 9ae67dfc0ac455341ba46758b9395cc2, type: 2}
   m_Color: {r: 0.9433962, g: 0.9433962, b: 0.9433962, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.0064778, y: 1.0516666}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -373,6 +375,40 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   spinAttackSFX: {fileID: 8300000, guid: bf17181d9eeb97345985010ee6b14ec5, type: 3}
+--- !u!95 &57059090
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57059079}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ead6881fe6bc0fc4daab072944c68ad3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &57059091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57059079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e595ae979bb58841943bb03b951fc5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimManager
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

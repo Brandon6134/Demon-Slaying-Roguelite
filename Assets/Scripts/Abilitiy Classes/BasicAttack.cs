@@ -8,6 +8,8 @@ public class BasicAttack : AttackSchema
     {
         if (!Ready()) return;
 
+        PlayerAnimManager.Instance.SetIsBasicAttack(true);
+
         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position,attackRange,enemyLayer);
         for (int i = 0; i < enemiesToDamage.Length; i++) //make all enemies in circle hitbox take damage
         {
