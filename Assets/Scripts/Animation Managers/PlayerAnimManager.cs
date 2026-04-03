@@ -1,16 +1,16 @@
 using System;
 using UnityEngine;
 
-public class PlayerAnimManager : MonoBehaviour
+public class PlayerAnimManager : CharacterAnimManager
 {
     public static PlayerAnimManager Instance;
-    private Animator animator;
     private String isWalking = "isWalking";
     private String basicAttack = "isBasicAttack";
-    void Awake()
-    {
-        animator = GetComponent<Animator>();
+    private String isSpinAttack = "isSpinAttack";
 
+    protected override void Awake()
+    {
+        base.Awake();
         Instance = this;
     }
 
@@ -27,5 +27,15 @@ public class PlayerAnimManager : MonoBehaviour
     public void SetIsWalkinkg(bool boolean)
     {
         animator.SetBool(isWalking,boolean);
+    }
+
+    public void SetIsSpinAttack(bool boolean)
+    {
+        animator.SetBool(isSpinAttack,boolean);
+    }
+
+    public void SetIsSpinAttackFalse()
+    {
+        SetIsSpinAttack(false);
     }
 }

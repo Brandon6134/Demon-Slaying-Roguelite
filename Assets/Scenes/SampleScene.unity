@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 57059089}
   - component: {fileID: 57059087}
   - component: {fileID: 57059091}
+  - component: {fileID: 57059092}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -367,7 +368,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70c1f0662cfcd5c42b7e1b2a1d3dc640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ChargeAttack
-  cooldown: 1
+  cooldown: 0.5
   attackPos: {fileID: 57059084}
   attackRange: 2
   damage: 3
@@ -409,6 +410,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e595ae979bb58841943bb03b951fc5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimManager
+--- !u!114 &57059092
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 57059079}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c746b359ff654c045bfaed943529ac66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerProperties
+  definedHealth: 10
+  popupDamageText: {fileID: 7947127680326472455, guid: 85454d48f83f4cd4ea8237aea6b79655, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0

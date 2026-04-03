@@ -11,11 +11,13 @@ public class CharacterEntity : MonoBehaviour
     protected float activeHealth;
     public GameObject popupDamageText;
     protected Rigidbody2D rb;
+    private SpriteRenderer spriteRenderer;
 
     void Awake()
     {
         activeHealth = definedHealth;
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     public void TakeDamage(float damage)
@@ -24,6 +26,15 @@ public class CharacterEntity : MonoBehaviour
         Vector3 damageTextPos = gameObject.transform.position + new Vector3(Random.Range(-1f,1f),Random.Range(1f,2f),0);
         GameObject newPopupDamageText = Instantiate(popupDamageText,damageTextPos,Quaternion.identity);
         newPopupDamageText.GetComponent<PopupDamageBehaviour>().SetText(damage);
+
+        StartCoroutine(TurnRed());
+    }
+
+    IEnumerator TurnRed()
+    {
+        spriteRenderer.color = Color.red;
+        yield return new WaitForSeconds(0.2f); 
+        spriteRenderer.color = Color.white;
     }
 
 }

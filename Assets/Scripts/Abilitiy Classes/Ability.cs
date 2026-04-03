@@ -3,6 +3,7 @@ using UnityEngine;
 public abstract class Ability : MonoBehaviour
 {
     public float cooldown = 0.5f;
+    protected CharacterAnimManager animManager;
     protected float cooldownTimer;
     protected Rigidbody2D rb;
     protected PlayerController player;
@@ -11,6 +12,7 @@ public abstract class Ability : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         player = GetComponent<PlayerController>();
+        animManager = GetComponent<CharacterAnimManager>();
     }
 
     public virtual void Tick()

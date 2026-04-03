@@ -10,9 +10,11 @@ GameObject:
   m_Component:
   - component: {fileID: 8028628831392574606}
   - component: {fileID: 1756200375721551183}
-  - component: {fileID: 7588061793514589444}
   - component: {fileID: 1922145135433530070}
   - component: {fileID: 881461346883429954}
+  - component: {fileID: 7588061793514589444}
+  - component: {fileID: 7679328479711011026}
+  - component: {fileID: 3961979981958329435}
   m_Layer: 6
   m_Name: Demon
   m_TagString: Untagged
@@ -32,7 +34,8 @@ Transform:
   m_LocalPosition: {x: -3.488, y: -0.023, z: 0}
   m_LocalScale: {x: 1.731, y: 1.731, z: 1.731}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 302854088569487700}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1756200375721551183
@@ -93,21 +96,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7588061793514589444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2008446783429159003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6125797b4879e5f408949fd648c1d4fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DemonBehaviour
-  definedHealth: 5
-  popupDamageText: {fileID: 7947127680326472455, guid: 85454d48f83f4cd4ea8237aea6b79655, type: 3}
-  chaseSpeed: 1
 --- !u!50 &1922145135433530070
 Rigidbody2D:
   serializedVersion: 5
@@ -181,3 +169,82 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.7373395, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &7588061793514589444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008446783429159003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6125797b4879e5f408949fd648c1d4fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DemonBehaviour
+  definedHealth: 5
+  popupDamageText: {fileID: 7947127680326472455, guid: 85454d48f83f4cd4ea8237aea6b79655, type: 3}
+  chaseSpeed: 1
+--- !u!114 &7679328479711011026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008446783429159003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0429d6be17c08ba44985670aa1b91c63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
+  cooldown: 0.5
+  attackPos: {fileID: 302854088569487700}
+  attackRange: 0.67
+  damage: 2
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 1
+  missSwordSlashSFX: {fileID: 8300000, guid: 3382bc13b71b2a74e9b438ab9e7718a0, type: 3}
+  hitSwordSlashSFX: {fileID: 8300000, guid: 3382bc13b71b2a74e9b438ab9e7718a0, type: 3}
+--- !u!114 &3961979981958329435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008446783429159003}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ece31b720fe4ea499416ced638f0582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BasicDemonAnimManager
+--- !u!1 &3942243183351445327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 302854088569487700}
+  m_Layer: 6
+  m_Name: Attack Pos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &302854088569487700
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3942243183351445327}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.71, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8028628831392574606}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

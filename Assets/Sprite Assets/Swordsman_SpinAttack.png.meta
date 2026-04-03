@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 957c01f8105e0134e960eb4fbf3db096
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2480054474589746043
+    second: Swordsman_SpinAttack_0
+  - first:
+      213: -8510729356429727527
+    second: Swordsman_SpinAttack_1
+  - first:
+      213: -6543950308591632171
+    second: Swordsman_SpinAttack_2
+  - first:
+      213: -3072596105393020571
+    second: Swordsman_SpinAttack_3
+  - first:
+      213: 6493798526341839293
+    second: Swordsman_SpinAttack_4
+  - first:
+      213: 1045603843709153686
+    second: Swordsman_SpinAttack_5
+  - first:
+      213: -1593492928869374111
+    second: Swordsman_SpinAttack_6
+  - first:
+      213: -1119955758054834252
+    second: Swordsman_SpinAttack_7
+  - first:
+      213: 4279880660967622922
+    second: Swordsman_SpinAttack_8
+  - first:
+      213: -5046993221347916446
+    second: Swordsman_SpinAttack_9
+  - first:
+      213: 2474098096715740100
+    second: Swordsman_SpinAttack_10
+  - first:
+      213: -4689780230366798110
+    second: Swordsman_SpinAttack_11
+  - first:
+      213: 5200251184951782191
+    second: Swordsman_SpinAttack_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 70
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_0
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 2
+        width: 63
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58cc5726893159dd0800000000000000
+      internalID: -2480054474589746043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_1
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 1
+        width: 76
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d8648afdb0d3e980800000000000000
+      internalID: -8510729356429727527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_2
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 2
+        width: 71
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d0869c9dd73f25a0800000000000000
+      internalID: -6543950308591632171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_3
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 4
+        width: 29
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 561ecc71f12fb55d0800000000000000
+      internalID: -3072596105393020571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_4
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 2
+        width: 71
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db97f85aa5b9e1a50800000000000000
+      internalID: 6493798526341839293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_5
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 1
+        width: 76
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6913110f72bb28e00800000000000000
+      internalID: 1045603843709153686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_6
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 0
+        width: 79
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 167e4a6bf96c2e9e0800000000000000
+      internalID: -1593492928869374111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_7
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 0
+        width: 85
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4bffcfcfb2e1570f0800000000000000
+      internalID: -1119955758054834252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_8
+      rect:
+        serializedVersion: 2
+        x: 784
+        y: 2
+        width: 58
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a090a0e09c0356b30800000000000000
+      internalID: 4279880660967622922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_9
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 4
+        width: 29
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 265c0c1c76a75f9b0800000000000000
+      internalID: -5046993221347916446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_10
+      rect:
+        serializedVersion: 2
+        x: 972
+        y: 2
+        width: 58
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c336325c13c55220800000000000000
+      internalID: 2474098096715740100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_11
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 0
+        width: 85
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ee565e5abd8aeeb0800000000000000
+      internalID: -4689780230366798110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Swordsman_SpinAttack_12
+      rect:
+        serializedVersion: 2
+        x: 1158
+        y: 2
+        width: 63
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2beadd86e00b2840800000000000000
+      internalID: 5200251184951782191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Swordsman_SpinAttack_0: -2480054474589746043
+      Swordsman_SpinAttack_1: -8510729356429727527
+      Swordsman_SpinAttack_10: 2474098096715740100
+      Swordsman_SpinAttack_11: -4689780230366798110
+      Swordsman_SpinAttack_12: 5200251184951782191
+      Swordsman_SpinAttack_2: -6543950308591632171
+      Swordsman_SpinAttack_3: -3072596105393020571
+      Swordsman_SpinAttack_4: 6493798526341839293
+      Swordsman_SpinAttack_5: 1045603843709153686
+      Swordsman_SpinAttack_6: -1593492928869374111
+      Swordsman_SpinAttack_7: -1119955758054834252
+      Swordsman_SpinAttack_8: 4279880660967622922
+      Swordsman_SpinAttack_9: -5046993221347916446
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
