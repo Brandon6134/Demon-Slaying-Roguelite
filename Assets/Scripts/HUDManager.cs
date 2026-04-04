@@ -9,6 +9,7 @@ public class HUDManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI healthText;
     [SerializeField] TextMeshProUGUI waveNumText;
     [SerializeField] TextMeshProUGUI objectiveText;
+    [SerializeField] TextMeshProUGUI bloodText;
     [SerializeField] CharacterEntity player;
     [SerializeField] EnemyWaveManager enemyWaveManager;
     private string playerHealth;
@@ -26,6 +27,7 @@ public class HUDManager : MonoBehaviour
         UpdateHealth();
         UpdateWaveNumber();
         UpdateObjectiveText();
+        UpdateBloodText();
     }
 
     public void UpdateHealth()
@@ -42,5 +44,10 @@ public class HUDManager : MonoBehaviour
     public void UpdateObjectiveText()
     {
         objectiveText.text = "Kills: " + enemyWaveManager.GetCurrentKills() + "/" + enemyWaveManager.GetRequiredKills();
+    }
+
+    public void UpdateBloodText()
+    {
+        bloodText.text = "Blood: " + BloodCurrencyManager.Instance.GetBloodAmount();
     }
 }

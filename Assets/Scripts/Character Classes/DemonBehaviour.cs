@@ -10,6 +10,7 @@ public class DemonBehaviour : CharacterEntity
     private Pool enemyPool;
     private Transform playerTransform;
     public float chaseSpeed = 3f;
+    public int bloodEarned = 2;
     BasicAttack basicAttack;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -38,6 +39,8 @@ public class DemonBehaviour : CharacterEntity
         activeHealth = definedHealth;
         ResetColor();
         EnemyWaveManager.Instance.AddKill();
+        BloodCurrencyManager.Instance.AddBloodAmount(bloodEarned);
+        HUDManager.Instance.UpdateBloodText();
     }
 
     public void ChasePlayer()

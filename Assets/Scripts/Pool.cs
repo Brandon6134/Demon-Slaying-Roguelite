@@ -11,7 +11,7 @@ public class Pool : MonoBehaviour
     {
         for(int i=0;i<poolSize;i++) //initialize pool with preset number of inactive prefab gameobjects
         {
-            GameObject prefabObject = Instantiate(prefab,this.transform); //instantiate enemies with this gameobject as the parent
+            GameObject prefabObject = Instantiate(prefab,this.transform); //instantiate prefabs with this gameobject as the parent
             prefabObject.SetActive(false);
             pool.Enqueue(prefabObject);
         }

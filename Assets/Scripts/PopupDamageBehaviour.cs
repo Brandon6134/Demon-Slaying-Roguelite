@@ -11,7 +11,6 @@ public class PopupDamageBehaviour : MonoBehaviour
     void Start()
     {
         dmgTextPool = transform.parent.GetComponent<Pool>(); //gain access to the dmg text pool when initailzed
-        //Destroy(gameObject,1.5f);
     }
 
     // Update is called once per frame

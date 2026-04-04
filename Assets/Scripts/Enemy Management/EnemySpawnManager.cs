@@ -22,7 +22,6 @@ public class EnemySpawnManager : MonoBehaviour
             enemyPool.Spawn(spawnPos);
             yield return new WaitForSeconds(spawnInterval);
         }
-        
     }
 
     public void DecreaseSpawnInterval(float decreaseIntervalAmount)
