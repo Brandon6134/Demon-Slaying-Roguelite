@@ -1,4 +1,6 @@
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
+using System.Collections;
 
 public class PlayerProperties: CharacterEntity
 {
@@ -15,5 +17,11 @@ public class PlayerProperties: CharacterEntity
             Destroy(gameObject);
             print("You died!");
         }
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        HUDManager.Instance.UpdateHealth();
     }
 }

@@ -23,12 +23,11 @@ public class CharacterEntity : MonoBehaviour
         dmgTextPool = GameObject.FindGameObjectWithTag("Damage Text Pool").GetComponent<Pool>();
     }
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         activeHealth -= damage;
         Vector3 damageTextPos = gameObject.transform.position + new Vector3(Random.Range(-1f,1f),Random.Range(1f,2f),0);
         GameObject newPopupDamageText = dmgTextPool.Spawn(damageTextPos);
-        //GameObject newPopupDamageText = Instantiate(popupDamageText,damageTextPos,Quaternion.identity);
         newPopupDamageText.GetComponent<PopupDamageBehaviour>().SetText(damage);
 
         StartCoroutine(TurnRed());
@@ -44,6 +43,16 @@ public class CharacterEntity : MonoBehaviour
     protected void ResetColor()
     {
         spriteRenderer.color = Color.white;
+    }
+
+    public float GetActiveHealth()
+    {
+        return activeHealth;
+    }
+
+    public float GetDefinedHealth()
+    {
+        return definedHealth;
     }
 
 }
