@@ -968,7 +968,7 @@ GameObject:
   - component: {fileID: 1364669344}
   - component: {fileID: 1364669343}
   m_Layer: 0
-  m_Name: Square
+  m_Name: 'Background '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1047,6 +1047,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1666416006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1666416008}
+  - component: {fileID: 1666416007}
+  m_Layer: 0
+  m_Name: Damage Text Pool
+  m_TagString: Damage Text Pool
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1666416007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666416006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f98feff964aff54caef2a039d87c971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pool
+  prefab: {fileID: 7947127680326472455, guid: 85454d48f83f4cd4ea8237aea6b79655, type: 3}
+  poolSize: 15
+--- !u!4 &1666416008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1666416006}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.05986, y: 0.08204, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1901433831
 GameObject:
   m_ObjectHideFlags: 0
@@ -1076,7 +1122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f98feff964aff54caef2a039d87c971, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPool
-  enemyPrefab: {fileID: 2008446783429159003, guid: b46dda38b95ea24449a81a5758e8bb2a, type: 3}
+  prefab: {fileID: 2008446783429159003, guid: b46dda38b95ea24449a81a5758e8bb2a, type: 3}
   poolSize: 10
 --- !u!4 &1901433833
 Transform:
@@ -1104,4 +1150,5 @@ SceneRoots:
   - {fileID: 712860990}
   - {fileID: 1901433833}
   - {fileID: 752917131}
+  - {fileID: 1666416008}
   - {fileID: 1364669344}

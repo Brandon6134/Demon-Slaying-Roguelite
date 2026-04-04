@@ -7,14 +7,14 @@ using UnityEngine.UIElements;
 
 public class DemonBehaviour : CharacterEntity
 {
-    private EnemyPool enemyPool;
+    private Pool enemyPool;
     private Transform playerTransform;
     public float chaseSpeed = 3f;
     BasicAttack basicAttack;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        enemyPool = transform.parent.GetComponent<EnemyPool>(); //gain access to the enemy pool when initailzed
+        enemyPool = transform.parent.GetComponent<Pool>(); //gain access to the enemy pool when initailzed
         playerTransform = PlayerManager.Player.transform; //gain access to player transform when initialized
         basicAttack = GetComponent<BasicAttack>();
     }
@@ -32,10 +32,11 @@ public class DemonBehaviour : CharacterEntity
         basicAttack.Tick();
     }
 
-    public void Die() //make demon "die" and reset health
+    public void Die() //make demon "die" and reset health, colour, etc.
     {
-        enemyPool.DespawnEnemy(gameObject);
+        enemyPool.Despawn(gameObject);
         activeHealth = definedHealth;
+        ResetColor();
     }
 
     public void ChasePlayer()

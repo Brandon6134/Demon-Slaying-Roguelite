@@ -12,19 +12,23 @@ public class CharacterEntity : MonoBehaviour
     public GameObject popupDamageText;
     protected Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
+    private Pool dmgTextPool;
 
     void Awake()
     {
         activeHealth = definedHealth;
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        dmgTextPool = GameObject.FindGameObjectWithTag("Damage Text Pool").GetComponent<Pool>();
     }
 
     public void TakeDamage(float damage)
     {
         activeHealth -= damage;
         Vector3 damageTextPos = gameObject.transform.position + new Vector3(Random.Range(-1f,1f),Random.Range(1f,2f),0);
-        GameObject newPopupDamageText = Instantiate(popupDamageText,damageTextPos,Quaternion.identity);
+        GameObject newPopupDamageText = dmgTextPool.Spawn(damageTextPos);
+        //GameObject newPopupDamageText = Instantiate(popupDamageText,damageTextPos,Quaternion.identity);
         newPopupDamageText.GetComponent<PopupDamageBehaviour>().SetText(damage);
 
         StartCoroutine(TurnRed());
@@ -34,6 +38,11 @@ public class CharacterEntity : MonoBehaviour
     {
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.2f); 
+        spriteRenderer.color = Color.white;
+    }
+
+    protected void ResetColor()
+    {
         spriteRenderer.color = Color.white;
     }
 
