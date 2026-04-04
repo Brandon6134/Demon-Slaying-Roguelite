@@ -37,6 +37,7 @@ public class DemonBehaviour : CharacterEntity
         enemyPool.Despawn(gameObject);
         activeHealth = definedHealth;
         ResetColor();
+        EnemyWaveManager.Instance.AddKill();
     }
 
     public void ChasePlayer()

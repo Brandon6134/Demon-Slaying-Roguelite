@@ -29,7 +29,6 @@ public class Pool : MonoBehaviour
     {
         prefabObject.SetActive(false);
         pool.Enqueue(prefabObject);
-        //more reset stuff here like health, etc...
     }
 
 }
