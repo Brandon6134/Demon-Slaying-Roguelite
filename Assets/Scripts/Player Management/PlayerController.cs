@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     BasicAttack basicAttack;
     Dash dash;
     ChargeAttack chargeAttack;
+    ShootFireballs shootFireballs;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +24,7 @@ public class PlayerController : MonoBehaviour
         basicAttack = GetComponent<BasicAttack>();
         dash = GetComponent<Dash>();
         chargeAttack = GetComponent<ChargeAttack>();
+        shootFireballs = GetComponent<ShootFireballs>();
     }
 
     // Update is called once per frame
@@ -38,6 +40,7 @@ public class PlayerController : MonoBehaviour
         basicAttack.Tick();
         dash.Tick();
         chargeAttack.Tick();
+        shootFireballs.Tick();
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -57,6 +60,10 @@ public class PlayerController : MonoBehaviour
             else
                 basicAttack.TryActivate();
         }
+
+        if(Input.GetMouseButtonDown(1))
+            shootFireballs.TryActivate();
+
         
         if (Input.GetKeyDown(KeyCode.LeftShift))
             dash.TryActivate();
