@@ -322,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BasicAttack
   cooldown: 0.2
   attackPos: {fileID: 1206407046}
-  attackRange: 0.63
+  attackRange: 1.27
   damage: 1
   enemyLayer:
     serializedVersion: 2
