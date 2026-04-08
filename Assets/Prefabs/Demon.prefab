@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7588061793514589444}
   - component: {fileID: 7679328479711011026}
   - component: {fileID: 3961979981958329435}
+  - component: {fileID: 5387687951758821288}
   m_Layer: 6
   m_Name: Demon
   m_TagString: Untagged
@@ -32,7 +33,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.488, y: -0.023, z: 0}
-  m_LocalScale: {x: 1.731, y: 1.731, z: 1.731}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 302854088569487700}
@@ -84,8 +85,8 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 5735315430368405739, guid: 9fe950d072fef9242a0ff6d714be00ec, type: 3}
+  m_SortingOrder: 2
+  m_Sprite: {fileID: 7946568954496995798, guid: 5b3d9e6b296ab604ea881150759354ff, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -161,7 +162,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64250004, y: 1.0040364}
+    oldSize: {x: 1.1428572, y: 1.3428571}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -184,6 +185,7 @@ MonoBehaviour:
   definedHealth: 5
   popupDamageText: {fileID: 7947127680326472455, guid: 85454d48f83f4cd4ea8237aea6b79655, type: 3}
   chaseSpeed: 1
+  bloodEarned: 2
 --- !u!114 &7679328479711011026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -217,6 +219,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ece31b720fe4ea499416ced638f0582, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicDemonAnimManager
+--- !u!95 &5387687951758821288
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008446783429159003}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: dfa72ccf6c70a354e8cdc59d2a882db7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3942243183351445327
 GameObject:
   m_ObjectHideFlags: 0
