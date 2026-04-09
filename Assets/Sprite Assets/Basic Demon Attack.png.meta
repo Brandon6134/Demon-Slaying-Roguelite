@@ -1,0 +1,572 @@
+fileFormatVersion: 2
+guid: cb848515409498f44b69e3d1d5a81393
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1204270212008208267
+    second: Basic Demon Attack_0
+  - first:
+      213: 1219646006020664661
+    second: Basic Demon Attack_1
+  - first:
+      213: 461180204640150083
+    second: Basic Demon Attack_2
+  - first:
+      213: -7625212399154676427
+    second: Basic Demon Attack_3
+  - first:
+      213: -1240062424487450217
+    second: Basic Demon Attack_4
+  - first:
+      213: 4216744252079008122
+    second: Basic Demon Attack_5
+  - first:
+      213: 548126435886660579
+    second: Basic Demon Attack_6
+  - first:
+      213: -7548416555447327533
+    second: Basic Demon Attack_7
+  - first:
+      213: 37506517945852773
+    second: Basic Demon Attack_8
+  - first:
+      213: -1219119614289537606
+    second: Basic Demon Attack_9
+  - first:
+      213: 6559626202529495205
+    second: Basic Demon Attack_10
+  - first:
+      213: 3300834396836180654
+    second: Basic Demon Attack_11
+  - first:
+      213: -3972533082973444649
+    second: Basic Demon Attack_12
+  - first:
+      213: -8782801138610555901
+    second: Basic Demon Attack_13
+  - first:
+      213: -1862924565282092470
+    second: Basic Demon Attack_14
+  - first:
+      213: -861026933083591821
+    second: Basic Demon Attack_15
+  - first:
+      213: 3084123075029399932
+    second: Basic Demon Attack_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 70
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Basic Demon Attack_0
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 0
+        width: 84
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b876558906d66b010800000000000000
+      internalID: 1204270212008208267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_1
+      rect:
+        serializedVersion: 2
+        x: 95
+        y: 0
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 55de59c949d0de010800000000000000
+      internalID: 1219646006020664661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_2
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 0
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 342a403e3f0766600800000000000000
+      internalID: 461180204640150083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_3
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 0
+        width: 94
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53d3b7b19bdcd2690800000000000000
+      internalID: -7625212399154676427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_4
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 0
+        width: 84
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799ad198bc96acee0800000000000000
+      internalID: -1240062424487450217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_5
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 0
+        width: 79
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a79e6d55e82e48a30800000000000000
+      internalID: 4216744252079008122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_6
+      rect:
+        serializedVersion: 2
+        x: 596
+        y: 0
+        width: 69
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eb760fd6165b9700800000000000000
+      internalID: 548126435886660579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_7
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 0
+        width: 51
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d462e3d223ae3790800000000000000
+      internalID: -7548416555447327533
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_8
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 0
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 563ace6baff358000800000000000000
+      internalID: 37506517945852773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_9
+      rect:
+        serializedVersion: 2
+        x: 890
+        y: 0
+        width: 60
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab59f838b21d41fe0800000000000000
+      internalID: -1219119614289537606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_10
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 0
+        width: 67
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a87d1dd649780b50800000000000000
+      internalID: 6559626202529495205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_11
+      rect:
+        serializedVersion: 2
+        x: 1082
+        y: 0
+        width: 60
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea2bfc5356beecd20800000000000000
+      internalID: 3300834396836180654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_12
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 0
+        width: 48
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7d561ea553abed8c0800000000000000
+      internalID: -3972533082973444649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_13
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 0
+        width: 51
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 304b830d5e83d1680800000000000000
+      internalID: -8782801138610555901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_14
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 0
+        width: 69
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4a03036aff8526e0800000000000000
+      internalID: -1862924565282092470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_15
+      rect:
+        serializedVersion: 2
+        x: 1454
+        y: 0
+        width: 79
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37b2287f0940d04f0800000000000000
+      internalID: -861026933083591821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Basic Demon Attack_16
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 0
+        width: 84
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7976baa8910dca20800000000000000
+      internalID: 3084123075029399932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Basic Demon Attack_0: 1204270212008208267
+      Basic Demon Attack_1: 1219646006020664661
+      Basic Demon Attack_10: 6559626202529495205
+      Basic Demon Attack_11: 3300834396836180654
+      Basic Demon Attack_12: -3972533082973444649
+      Basic Demon Attack_13: -8782801138610555901
+      Basic Demon Attack_14: -1862924565282092470
+      Basic Demon Attack_15: -861026933083591821
+      Basic Demon Attack_16: 3084123075029399932
+      Basic Demon Attack_2: 461180204640150083
+      Basic Demon Attack_3: -7625212399154676427
+      Basic Demon Attack_4: -1240062424487450217
+      Basic Demon Attack_5: 4216744252079008122
+      Basic Demon Attack_6: 548126435886660579
+      Basic Demon Attack_7: -7548416555447327533
+      Basic Demon Attack_8: 37506517945852773
+      Basic Demon Attack_9: -1219119614289537606
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

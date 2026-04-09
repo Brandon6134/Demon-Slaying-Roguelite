@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -46,6 +47,7 @@ public class DemonBehaviour : CharacterEntity
     {
         Vector2 chaseDirection = (playerTransform.position - transform.position).normalized;
         rb.linearVelocity = chaseDirection * chaseSpeed;
+        FlipSprite(chaseDirection.x);
     }
 
     IEnumerator DetectPlayer()
@@ -56,6 +58,14 @@ public class DemonBehaviour : CharacterEntity
             basicAttack.TryActivate();
         }
             
+    }
+
+    void FlipSprite(float directionX)
+    {
+        if (directionX > 0f)
+            transform.localScale = new Vector3(1,1,1);
+        else if (directionX < 0f)
+            transform.localScale = new Vector3(-1,1,1);
     }
 
 }

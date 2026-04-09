@@ -9,10 +9,12 @@ public class BasicAttack : AttackSchema
     {
         if (!Ready()) return;
 
-        if (animManager is PlayerAnimManager playerAnim)
-        {
-            playerAnim.SetIsBasicAttack(true);
-        }
+        // if (animManager is PlayerAnimManager playerAnim)
+        // {
+        //     playerAnim.SetIsBasicAttack(true);
+        // }
+
+        animManager.SetIsBasicAttack(true);
 
         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position,attackRange,enemyLayer);
         for (int i = 0; i < enemiesToDamage.Length; i++) //make all enemies in circle hitbox take damage
