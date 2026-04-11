@@ -9,6 +9,8 @@ public class CharacterEntity : MonoBehaviour
     //each character entity should have health, die when health = 0
     public float definedHealth = 10f;
     protected float activeHealth;
+    protected bool isKnockedback = false;
+    protected bool isStunned = false;
     public GameObject popupDamageText;
     protected Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -33,6 +35,31 @@ public class CharacterEntity : MonoBehaviour
         StartCoroutine(TurnRed());
     }
 
+    public virtual void TakeKnockback(float knockbackDistance, Transform attackerTransform, float knockbackDuration, float stunDuration)
+    {
+        isKnockedback = true;
+        Vector2 knockbackDirection = (transform.position - attackerTransform.position).normalized;
+        rb.linearVelocity = knockbackDirection * knockbackDistance;
+        StartCoroutine(KnockbackTimer(knockbackDuration,stunDuration));
+    }
+
+    IEnumerator KnockbackTimer(float knockbackDuration,float stunDuration)
+    {
+        yield return new WaitForSeconds(knockbackDuration);
+        
+        isStunned = true;
+        rb.linearVelocity = Vector3.zero; //set stunned
+        isKnockedback = false;
+        
+        StartCoroutine(StunTimer(stunDuration));
+    }
+
+    IEnumerator StunTimer(float stunDuration)
+    {
+        yield return new WaitForSeconds(stunDuration);
+        isStunned = false;
+    }
+
     IEnumerator TurnRed() //blink the entity red to indicate they've taken damage
     {
         spriteRenderer.color = Color.red;
@@ -53,6 +80,16 @@ public class CharacterEntity : MonoBehaviour
     public float GetDefinedHealth()
     {
         return definedHealth;
+    }
+
+    public bool GetIsKnockedback()
+    {
+        return isKnockedback;
+    }
+
+    public bool GetIsStunned()
+    {
+        return isStunned;
     }
 
 }

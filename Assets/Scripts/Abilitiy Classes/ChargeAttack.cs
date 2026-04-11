@@ -17,7 +17,6 @@ public class ChargeAttack : AttackSchema
         AudioManager.Instance.PlaySFX(spinAttackSFX,0.6f);
 
         StartCooldown();
-        print(attackPos.localPosition);
     }
 
     void Attack(Vector3 posModifier)
@@ -25,7 +24,8 @@ public class ChargeAttack : AttackSchema
         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position + posModifier*distanceFromPlayer,attackRange,enemyLayer);
         for (int i = 0; i < enemiesToDamage.Length; i++) //make all enemies in circle hitbox take damage
         {
-            enemiesToDamage[i].GetComponent<DemonBehaviour>().TakeDamage(damage);
+            enemiesToDamage[i].GetComponent<CharacterEntity>().TakeDamage(damage);
+            enemiesToDamage[i].GetComponent<CharacterEntity>().TakeKnockback(knockbackDistance,transform,knockbackDuration,stunDuration);
         }
     }
     

@@ -7,6 +7,7 @@ public class PlayerController : MonoBehaviour
     public float playerSpeed;
     public float holdMouse0Threshold;
     private Rigidbody2D playerRb;
+    private PlayerProperties playerProperties;
     private Vector2 playerInput;
     private float holdMouse0Timer;
     private bool isHoldingMouse0;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
+        playerProperties = GetComponent<PlayerProperties>();
         
         basicAttack = GetComponent<BasicAttack>();
         dash = GetComponent<Dash>();
@@ -70,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (!dash.IsDashing())
+        if (!dash.IsDashing() && !playerProperties.GetIsKnockedback() && !playerProperties.GetIsStunned())
             playerRb.linearVelocity = playerInput*playerSpeed; 
         
         FlipSprite(); 

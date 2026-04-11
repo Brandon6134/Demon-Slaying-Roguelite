@@ -26,6 +26,7 @@ public class BasicAttack : AttackSchema
         for (int i = 0; i < enemiesToDamage.Length; i++) //make all enemies in circle hitbox take damage
         {
             enemiesToDamage[i].GetComponent<CharacterEntity>().TakeDamage(damage);
+            enemiesToDamage[i].GetComponent<CharacterEntity>().TakeKnockback(knockbackDistance,transform,knockbackDuration,stunDuration);
         }
 
         //plays correct sword slash sfx if enemy hit or missed

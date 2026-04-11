@@ -203,6 +203,9 @@ MonoBehaviour:
   attackPos: {fileID: 302854088569487700}
   attackRange: 0.73
   damage: 2
+  knockbackDistance: 10
+  knockbackDuration: 0.05
+  stunDuration: 0.3
   enemyLayer:
     serializedVersion: 2
     m_Bits: 1

@@ -25,8 +25,8 @@ public class DemonBehaviour : CharacterEntity
     {
         if (gameObject.activeSelf) //if demon is active and not in pool
             StartCoroutine(DetectPlayer());
-        
-        ChasePlayer();
+        if (!isKnockedback && !isStunned) //if demon isn't being knockedback or stunned, chase player
+            ChasePlayer();
         if (activeHealth<=0f)
             Die();
 
@@ -58,6 +58,12 @@ public class DemonBehaviour : CharacterEntity
             basicAttack.TryActivate();
         }
             
+    }
+
+    public void Knockback(float knockbackDistance)
+    {
+        Vector2 knockbackDirection = (transform.position - playerTransform.position).normalized;
+        rb.linearVelocity = knockbackDirection * knockbackDistance;
     }
 
     void FlipSprite(float directionX)

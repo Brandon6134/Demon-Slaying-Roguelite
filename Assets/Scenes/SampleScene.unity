@@ -324,7 +324,10 @@ MonoBehaviour:
   cooldown: 0.3
   attackPos: {fileID: 1206407046}
   attackRange: 1.27
-  damage: 1
+  damage: 2
+  knockbackDistance: 12
+  knockbackDuration: 0.1
+  stunDuration: 0.3
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -374,6 +377,9 @@ MonoBehaviour:
   attackPos: {fileID: 57059084}
   attackRange: 0.67
   damage: 3
+  knockbackDistance: 20
+  knockbackDuration: 0.1
+  stunDuration: 0.5
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
