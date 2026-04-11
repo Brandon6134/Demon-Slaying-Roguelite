@@ -13,9 +13,15 @@ public class BasicAttack : AttackSchema
         // {
         //     playerAnim.SetIsBasicAttack(true);
         // }
+        animManager.SetIsBasicAttack(false); //make sure is false before setting true
 
         animManager.SetIsBasicAttack(true);
 
+        StartCooldown();
+    }
+
+    void BasicAttackHitbox() //to be called at the active sword hit animation frame
+    {
         Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position,attackRange,enemyLayer);
         for (int i = 0; i < enemiesToDamage.Length; i++) //make all enemies in circle hitbox take damage
         {
@@ -27,8 +33,6 @@ public class BasicAttack : AttackSchema
             AudioManager.Instance.PlaySFX(missSwordSlashSFX);
         else
             AudioManager.Instance.PlaySFX(hitSwordSlashSFX);
-
-        StartCooldown();
     }
 
     void OnDrawGizmosSelected() //make circle hitbox visible in editor

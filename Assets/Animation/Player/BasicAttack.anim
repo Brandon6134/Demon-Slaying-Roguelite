@@ -24,19 +24,19 @@ AnimationClip:
       value: {fileID: 4145564978394192878, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
     - time: 0.016666668
       value: {fileID: 4601456556545142635, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
-    - time: 0.033333335
-      value: {fileID: -4505415332406465619, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
-    - time: 0.05
-      value: {fileID: -3816900984659253288, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
-    - time: 0.06666667
-      value: {fileID: -4678466629620725897, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
-    - time: 0.083333336
-      value: {fileID: -5436088812601693941, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
     - time: 0.1
-      value: {fileID: -1972164721953657835, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
+      value: {fileID: -4505415332406465619, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
     - time: 0.11666667
+      value: {fileID: -3816900984659253288, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
+    - time: 0.18333334
+      value: {fileID: -4678466629620725897, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
+    - time: 0.21666667
+      value: {fileID: -5436088812601693941, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
+    - time: 0.23333333
+      value: {fileID: -1972164721953657835, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
+    - time: 0.31666666
       value: {fileID: -5331313227850566142, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
-    - time: 0.13333334
+    - time: 0.33333334
       value: {fileID: -3996860140218333101, guid: dcf38e3e7c1bb0247accb2062320e63f, type: 3}
     attribute: m_Sprite
     path: 
@@ -74,7 +74,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.15
+    m_StopTime: 0.35000002
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -94,8 +94,15 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.13333334
-    functionName: SetIsSpinAttackFalse
+  - time: 0.18333334
+    functionName: BasicAttackHitbox
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.33333334
+    functionName: SetIsBasicAttackFalse
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
