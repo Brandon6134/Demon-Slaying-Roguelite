@@ -11,6 +11,7 @@ public class CharacterEntity : MonoBehaviour
     protected float activeHealth;
     protected bool isKnockedback = false;
     protected bool isStunned = false;
+    public bool isInvulnerable {get; set;}
     public GameObject popupDamageText;
     protected Rigidbody2D rb;
     private SpriteRenderer spriteRenderer;
@@ -27,6 +28,8 @@ public class CharacterEntity : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
+        if (isInvulnerable) return; //don't take damage if invulnerable
+
         activeHealth -= damage;
         Vector3 damageTextPos = gameObject.transform.position + new Vector3(Random.Range(-1f,1f),Random.Range(1f,2f),0);
         GameObject newPopupDamageText = dmgTextPool.Spawn(damageTextPos);

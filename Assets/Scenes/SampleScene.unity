@@ -348,6 +348,7 @@ MonoBehaviour:
   cooldown: 0.5
   dashSpeed: 15
   dashDuration: 0.2
+  invulnDuration: 0.1
   dashSFX: {fileID: 8300000, guid: 64d057a0a0563a444bc8c8037f084877, type: 3}
 --- !u!114 &57059088
 MonoBehaviour:

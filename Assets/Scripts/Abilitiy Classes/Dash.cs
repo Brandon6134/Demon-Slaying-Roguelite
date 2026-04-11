@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class Dash : Ability
@@ -6,7 +7,9 @@ public class Dash : Ability
     public float dashSpeed;
     public float dashDuration;
     private float dashTimeLeft;
+    public float invulnDuration = 0.2f;
     public AudioClip dashSFX;
+
     public override void TryActivate()
     {
         if (!Ready()) return;
@@ -20,6 +23,8 @@ public class Dash : Ability
 
         AudioManager.Instance.PlaySFX(dashSFX);
 
+        StartCoroutine(InvulnTimer());
+
         StartCooldown();
     }
 
@@ -30,6 +35,13 @@ public class Dash : Ability
             rb.linearVelocity = dashDirection * dashSpeed;
             dashTimeLeft -= Time.deltaTime;
         }
+    }
+
+    IEnumerator InvulnTimer()
+    {
+        entity.isInvulnerable = true;
+        yield return new WaitForSeconds(invulnDuration);
+        entity.isInvulnerable = false;
     }
 
     public bool IsDashing()

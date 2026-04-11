@@ -7,12 +7,14 @@ public abstract class Ability : MonoBehaviour
     protected float cooldownTimer;
     protected Rigidbody2D rb;
     protected PlayerController player;
+    protected CharacterEntity entity;
 
     protected virtual void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         player = GetComponent<PlayerController>();
         animManager = GetComponent<CharacterAnimManager>();
+        entity = GetComponent<CharacterEntity>();
     }
 
     public virtual void Tick()
