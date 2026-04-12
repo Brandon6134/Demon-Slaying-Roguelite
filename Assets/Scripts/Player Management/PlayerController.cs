@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System;
+using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 playerInput;
     private float holdMouse0Timer;
     private bool isHoldingMouse0;
+    private int playerDirection;
     BasicAttack basicAttack;
     Dash dash;
     ChargeAttack chargeAttack;
@@ -75,19 +77,30 @@ public class PlayerController : MonoBehaviour
         if (!dash.IsDashing() && !playerProperties.GetIsKnockedback() && !playerProperties.GetIsStunned())
             playerRb.linearVelocity = playerInput*playerSpeed; 
         
-        FlipSprite(); 
+        ChangeSpriteDirection(); 
     }
     
     public Vector2 GetPlayerInput()
     {
         return playerInput;
     }
-    void FlipSprite()
+    void ChangeSpriteDirection() //let playerDirection = 1 for right, 2 for left, 3 for up, 4 for down
     {
-        if (playerInput.x > 0f)
-            transform.localScale = new Vector3(1,1,1);
-        else if (playerInput.x < 0f)
-            transform.localScale = new Vector3(-1,1,1);
+        // if (playerInput.x > 0f)
+        //     transform.localScale = new Vector3(1,1,1);
+        // else if (playerInput.x < 0f)
+        //     transform.localScale = new Vector3(-1,1,1);
+
+        if (playerInput.x > 0f && playerInput.x > Math.Abs(playerInput.y))
+            playerDirection = 1;
+        else if (playerInput.x < 0f && Math.Abs(playerInput.x) > Math.Abs(playerInput.y))
+            playerDirection = 2;
+        else if (playerInput.y > 0f && playerInput.y > Math.Abs(playerInput.x))
+            playerDirection = 3;
+        else if (playerInput.y < 0f && Math.Abs(playerInput.y) > Math.Abs(playerInput.x))
+            playerDirection = 4;
+        
+        PlayerAnimManager.Instance.SetDirection(playerDirection);
     }
 
 }

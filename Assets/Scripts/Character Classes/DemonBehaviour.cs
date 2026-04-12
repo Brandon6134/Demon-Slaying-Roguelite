@@ -38,6 +38,9 @@ public class DemonBehaviour : CharacterEntity
         enemyPool.Despawn(gameObject);
         activeHealth = definedHealth;
         ResetColor();
+        isStunned = false;
+        isKnockedback = false;
+
         EnemyWaveManager.Instance.AddKill();
         BloodCurrencyManager.Instance.AddBloodAmount(bloodEarned);
         HUDManager.Instance.UpdateBloodText();

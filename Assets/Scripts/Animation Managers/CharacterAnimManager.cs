@@ -5,6 +5,7 @@ public abstract class CharacterAnimManager : MonoBehaviour
 {
     protected Animator animator;
     protected String basicAttack = "isBasicAttack";
+    protected String direction = "direction";
     protected virtual void Awake()
     {
         animator = GetComponent<Animator>();
@@ -18,5 +19,10 @@ public abstract class CharacterAnimManager : MonoBehaviour
     public void SetIsBasicAttackFalse() //called upon in event animation at end of basic attack animation
     {
         SetIsBasicAttack(false);
+    }
+
+    public void SetDirection(int value)
+    {
+        animator.SetInteger(direction,value);
     }
 }
