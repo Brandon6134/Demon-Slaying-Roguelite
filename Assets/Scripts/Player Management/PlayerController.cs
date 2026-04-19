@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 playerInput;
     private float holdMouse0Timer;
     private bool isHoldingMouse0;
-    private int playerDirection;
+    private Vector2 lastInputDirection;
     BasicAttack basicAttack;
     Dash dash;
     ChargeAttack chargeAttack;
@@ -84,23 +84,12 @@ public class PlayerController : MonoBehaviour
     {
         return playerInput;
     }
-    void ChangeSpriteDirection() //let playerDirection = 1 for right, 2 for left, 3 for up, 4 for down
+    void ChangeSpriteDirection()
     {
-        // if (playerInput.x > 0f)
-        //     transform.localScale = new Vector3(1,1,1);
-        // else if (playerInput.x < 0f)
-        //     transform.localScale = new Vector3(-1,1,1);
-
-        if (playerInput.x > 0f && playerInput.x > Math.Abs(playerInput.y))
-            playerDirection = 1;
-        else if (playerInput.x < 0f && Math.Abs(playerInput.x) > Math.Abs(playerInput.y))
-            playerDirection = 2;
-        else if (playerInput.y > 0f && playerInput.y > Math.Abs(playerInput.x))
-            playerDirection = 3;
-        else if (playerInput.y < 0f && Math.Abs(playerInput.y) > Math.Abs(playerInput.x))
-            playerDirection = 4;
+        if (playerInput != Vector2.zero) //save last player input before is zero, so animator remembers last direction facing (never reset to 0,0)
+            lastInputDirection = playerInput.normalized; //is normalized to set e.g. (0,0.002) to (0,1), important so all animations aren't used at once
         
-        PlayerAnimManager.Instance.SetDirection(playerDirection);
+        PlayerAnimManager.Instance.SetDirection(lastInputDirection);
     }
 
 }

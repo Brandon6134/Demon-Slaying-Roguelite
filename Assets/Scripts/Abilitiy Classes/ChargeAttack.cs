@@ -10,9 +10,7 @@ public class ChargeAttack : AttackSchema
     {
         if (!Ready()) return;
 
-        PlayerAnimManager.Instance.SetIsSpinAttack(true);
-
-        
+        PlayerAnimManager.Instance.TriggerSpinAttack();
 
         AudioManager.Instance.PlaySFX(spinAttackSFX,0.6f);
 

@@ -6,7 +6,7 @@ public class PlayerAnimManager : CharacterAnimManager
     public static PlayerAnimManager Instance;
     private String isWalking = "isWalking";
 
-    private String isSpinAttack = "isSpinAttack";
+    private String spinAttack = "SpinAttack";
 
     protected override void Awake()
     {
@@ -14,28 +14,13 @@ public class PlayerAnimManager : CharacterAnimManager
         Instance = this;
     }
 
-    // public void SetIsBasicAttackFalse() //called upon in event animation at end of basic attack animation
-    // {
-    //     SetIsBasicAttack(false);
-    // }
-
-    // public void SetIsBasicAttack(bool boolean)
-    // {
-    //     animator.SetBool(basicAttack,boolean);
-    // }
-
     public void SetIsWalkinkg(bool boolean)
     {
         animator.SetBool(isWalking,boolean);
     }
 
-    public void SetIsSpinAttack(bool boolean)
+    public void TriggerSpinAttack()
     {
-        animator.SetBool(isSpinAttack,boolean);
-    }
-
-    public void SetIsSpinAttackFalse()
-    {
-        SetIsSpinAttack(false);
+        animator.SetTrigger(spinAttack);
     }
 }

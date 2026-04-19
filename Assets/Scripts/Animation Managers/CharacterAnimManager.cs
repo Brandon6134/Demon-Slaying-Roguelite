@@ -4,25 +4,25 @@ using UnityEngine;
 public abstract class CharacterAnimManager : MonoBehaviour
 {
     protected Animator animator;
-    protected String basicAttack = "isBasicAttack";
+    protected String basicAttack = "BasicAttack";
     protected String direction = "direction";
+    protected String directionX = "DirectionX";
+    protected String directionY = "DirectionY";
     protected virtual void Awake()
     {
         animator = GetComponent<Animator>();
     }
 
-    public void SetIsBasicAttack(bool boolean)
+    public void TriggerBasicAttack()
     {
-        animator.SetBool(basicAttack,boolean);
+        animator.SetTrigger(basicAttack);
     }
 
-    public void SetIsBasicAttackFalse() //called upon in event animation at end of basic attack animation
+    public void SetDirection(Vector2 direction)
     {
-        SetIsBasicAttack(false);
+        //animator.SetInteger(direction,value);
+        animator.SetFloat(directionX,direction.x);
+        animator.SetFloat(directionY,direction.y);
     }
 
-    public void SetDirection(int value)
-    {
-        animator.SetInteger(direction,value);
-    }
 }

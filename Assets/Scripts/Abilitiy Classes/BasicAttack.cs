@@ -13,9 +13,10 @@ public class BasicAttack : AttackSchema
         // {
         //     playerAnim.SetIsBasicAttack(true);
         // }
-        animManager.SetIsBasicAttack(false); //make sure is false before setting true
+        // animManager.SetIsBasicAttack(false); //make sure is false before setting true
 
-        animManager.SetIsBasicAttack(true);
+        // animManager.SetIsBasicAttack(true);
+        animManager.TriggerBasicAttack();
 
         StartCooldown();
     }
