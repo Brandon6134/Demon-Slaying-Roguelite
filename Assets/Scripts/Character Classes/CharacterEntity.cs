@@ -14,7 +14,7 @@ public class CharacterEntity : MonoBehaviour
     public bool isInvulnerable {get; set;}
     public GameObject popupDamageText;
     protected Rigidbody2D rb;
-    private SpriteRenderer spriteRenderer;
+    protected SpriteRenderer spriteRenderer {get;set;}
     private Pool dmgTextPool;
 
     void Awake()
@@ -70,7 +70,7 @@ public class CharacterEntity : MonoBehaviour
         spriteRenderer.color = Color.white;
     }
 
-    protected void ResetColor()
+    public void ResetColor()
     {
         spriteRenderer.color = Color.white;
     }

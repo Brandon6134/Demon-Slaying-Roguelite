@@ -359,7 +359,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player Top-Down
+  m_Name: Old Player Top-Down
   serializedVersion: 6
   m_AnimatorParameters:
   - m_Name: isBasicAttack

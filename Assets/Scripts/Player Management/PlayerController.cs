@@ -5,13 +5,18 @@ using Unity.VisualScripting;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] InputActionReference moveInput;
+    [SerializeField] InputActionReference attackInput;
+    [SerializeField] InputActionReference dashInput;
+    [SerializeField] InputActionReference elementInput;
+    private Vector2 playerMovement;
     public float playerSpeed;
-    public float holdMouse0Threshold;
+    public float holdAttackTimeThreshhold;
     private Rigidbody2D playerRb;
     private PlayerProperties playerProperties;
-    private Vector2 playerInput;
-    private float holdMouse0Timer;
-    private bool isHoldingMouse0;
+    //private Vector2 playerInput;
+    private float attackStartTime;
+    private bool isHoldingAttack;
     private Vector2 lastInputDirection;
     BasicAttack basicAttack;
     Dash dash;
@@ -30,66 +35,94 @@ public class PlayerController : MonoBehaviour
         shootFireballs = GetComponent<ShootFireballs>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        playerInput = new Vector2(Input.GetAxis("Horizontal"),Input.GetAxis("Vertical"));
+        playerMovement = moveInput.action.ReadValue<Vector2>();
 
-        if (playerInput != Vector2.zero)
-            PlayerAnimManager.Instance.SetIsWalkinkg(true);
-        else
-            PlayerAnimManager.Instance.SetIsWalkinkg(false);
+        // if (playerMovement != Vector2.zero)
+        //     PlayerAnimManager.Instance.SetIsWalkinkg(true);
+        // else
+        //     PlayerAnimManager.Instance.SetIsWalkinkg(false);
 
-        basicAttack.Tick();
-        dash.Tick();
-        chargeAttack.Tick();
-        shootFireballs.Tick();
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            isHoldingMouse0 = true;
-            holdMouse0Timer = 0f;
-        }
-
-        if (Input.GetMouseButton(0) && isHoldingMouse0)
-            holdMouse0Timer += Time.deltaTime;
-        
-        if (Input.GetMouseButtonUp(0) && isHoldingMouse0)
-        {
-            isHoldingMouse0 = false;
-
-            if (holdMouse0Timer >= holdMouse0Threshold)
-                chargeAttack.TryActivate();
-            else
-                basicAttack.TryActivate();
-        }
-
-        if(Input.GetMouseButtonDown(1))
-            shootFireballs.TryActivate();
-
-        
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-            dash.TryActivate();
+        TickAbilities();
     }
 
     void FixedUpdate()
     {
         if (!dash.IsDashing() && !playerProperties.GetIsKnockedback() && !playerProperties.GetIsStunned())
-            playerRb.linearVelocity = playerInput*playerSpeed; 
+            playerRb.linearVelocity = playerMovement*playerSpeed; 
         
         ChangeSpriteDirection(); 
     }
     
     public Vector2 GetPlayerInput()
     {
-        return playerInput;
+        return playerMovement;
     }
     void ChangeSpriteDirection()
     {
-        if (playerInput != Vector2.zero) //save last player input before is zero, so animator remembers last direction facing (never reset to 0,0)
-            lastInputDirection = playerInput.normalized; //is normalized to set e.g. (0,0.002) to (0,1), important so all animations aren't used at once
+        if (playerMovement != Vector2.zero) //save last player input before is zero, so animator remembers last direction facing (never reset to 0,0)
+            lastInputDirection = playerMovement.normalized; //is normalized to set e.g. (0,0.002) to (0,1), important so all animations aren't used at once
         
         PlayerAnimManager.Instance.SetDirection(lastInputDirection);
+    }
+
+    private void OnEnable()
+    {
+        attackInput.action.started += AttackStart; //.started -> button was pressed down
+        attackInput.action.canceled += AttackCancel; //.cancled -> button was released
+        dashInput.action.started += Dash;
+        elementInput.action.started += Element;
+    }
+
+    private void OnDisable()
+    {
+        attackInput.action.started -= AttackStart;
+        attackInput.action.canceled -= AttackCancel;
+        dashInput.action.started -= Dash;
+        elementInput.action.started -= Element;
+    }
+
+
+    private void Dash(InputAction.CallbackContext obj)
+    {
+        dash.TryActivate();
+    }
+
+    private void Element(InputAction.CallbackContext obj)
+    {
+        shootFireballs.TryActivate();
+    }
+
+    private void AttackStart(InputAction.CallbackContext obj)
+    {
+        isHoldingAttack = true;
+        attackStartTime = Time.time;
+        playerProperties.ChangeColor(Color.yellow,0.5f);
+    }
+
+    private void AttackCancel(InputAction.CallbackContext obj)
+    {
+        if (!isHoldingAttack) return;
+        
+        isHoldingAttack = false;
+        float heldTime = Time.time - attackStartTime;
+
+        if (heldTime >= holdAttackTimeThreshhold)
+            chargeAttack.TryActivate();
+        else
+            basicAttack.TryActivate();
+        
+        playerProperties.StopChangeColor();
+        playerProperties.ResetColor();
+    }
+
+    private void TickAbilities()
+    {
+        basicAttack.Tick();
+        dash.Tick();
+        chargeAttack.Tick();
+        shootFireballs.Tick();
     }
 
 }
