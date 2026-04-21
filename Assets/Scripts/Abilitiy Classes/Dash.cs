@@ -14,7 +14,7 @@ public class Dash : Ability
     {
         if (!Ready()) return;
 
-        dashDirection = player.GetPlayerInput().normalized;
+        dashDirection = player.GetPlayerInputDirection().normalized;
 
         if (dashDirection == Vector2.zero) //if player isn't moving, set dash direction to player's forward 
             dashDirection = new Vector2(player.transform.localScale.x,0f); 

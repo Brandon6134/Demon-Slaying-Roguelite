@@ -9,13 +9,6 @@ public class BasicAttack : AttackSchema
     {
         if (!Ready()) return;
 
-        // if (animManager is PlayerAnimManager playerAnim)
-        // {
-        //     playerAnim.SetIsBasicAttack(true);
-        // }
-        // animManager.SetIsBasicAttack(false); //make sure is false before setting true
-
-        // animManager.SetIsBasicAttack(true);
         animManager.TriggerBasicAttack();
 
         StartCooldown();
@@ -23,7 +16,10 @@ public class BasicAttack : AttackSchema
 
     void BasicAttackHitbox() //to be called at the active sword hit animation frame
     {
-        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position,attackRange,enemyLayer);
+        if (player)
+            attackDirection = player.GetPlayerInputDirection()*attackRange;
+        
+        Collider2D[] enemiesToDamage = Physics2D.OverlapCircleAll(attackPos.position + attackDirection,attackRange,enemyLayer);
         for (int i = 0; i < enemiesToDamage.Length; i++) //make all enemies in circle hitbox take damage
         {
             enemiesToDamage[i].GetComponent<CharacterEntity>().TakeDamage(damage);

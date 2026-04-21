@@ -55,16 +55,16 @@ public class PlayerController : MonoBehaviour
         ChangeSpriteDirection(); 
     }
     
-    public Vector2 GetPlayerInput()
+    public Vector2 GetPlayerInputDirection()
     {
-        return playerMovement;
+        return lastInputDirection;
     }
     void ChangeSpriteDirection()
     {
         if (playerMovement != Vector2.zero) //save last player input before is zero, so animator remembers last direction facing (never reset to 0,0)
             lastInputDirection = playerMovement.normalized; //is normalized to set e.g. (0,0.002) to (0,1), important so all animations aren't used at once
         
-        PlayerAnimManager.Instance.SetDirection(lastInputDirection);
+        PlayerAnimManager.Instance.SetDirection(GetCardinalDirection(lastInputDirection));
     }
 
     private void OnEnable()
@@ -123,6 +123,17 @@ public class PlayerController : MonoBehaviour
         dash.Tick();
         chargeAttack.Tick();
         shootFireballs.Tick();
+    }
+
+    //returns absolute input directions, e.g. (0.8,0.2) -> (1,0) moving right
+    private Vector2 GetCardinalDirection(Vector2 dir)
+    {
+        // compare absolute values to find dominant axis
+        if (Mathf.Abs(dir.x) > Mathf.Abs(dir.y))
+            return new Vector2(Mathf.Sign(dir.x), 0); // Left or Right
+
+        else //if x == y like (0.7,0,7) top right diagonal input, is defined as moving up
+            return new Vector2(0, Mathf.Sign(dir.y)); // Up or Down
     }
 
 }

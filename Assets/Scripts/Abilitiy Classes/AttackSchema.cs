@@ -10,4 +10,5 @@ public abstract class AttackSchema : Ability
     public float stunDuration = 0.5f;
     //public Vector3 attackDisplacement;
     public LayerMask enemyLayer;
+    protected Vector3 attackDirection;
 }
