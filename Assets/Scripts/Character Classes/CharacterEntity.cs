@@ -16,6 +16,7 @@ public class CharacterEntity : MonoBehaviour
     protected Rigidbody2D rb;
     protected SpriteRenderer spriteRenderer {get;set;}
     private Pool dmgTextPool;
+    private Color baseColor;
 
     void Awake()
     {
@@ -24,6 +25,7 @@ public class CharacterEntity : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         dmgTextPool = GameObject.FindGameObjectWithTag("Damage Text Pool").GetComponent<Pool>();
+        baseColor = spriteRenderer.color;
     }
 
     public virtual void TakeDamage(float damage)
@@ -67,12 +69,12 @@ public class CharacterEntity : MonoBehaviour
     {
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.2f); 
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = baseColor;
     }
 
     public void ResetColor()
     {
-        spriteRenderer.color = Color.white;
+        spriteRenderer.color = baseColor;
     }
 
     public float GetActiveHealth()

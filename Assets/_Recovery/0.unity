@@ -989,10 +989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f9e4137746d55e439c2dbfce1f77986, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawnManager
-  enemyPools:
-  - {fileID: 994040708}
-  - {fileID: 1572748698}
-  - {fileID: 734752494}
+  enemyPools: []
 --- !u!4 &752917131
 Transform:
   m_ObjectHideFlags: 0

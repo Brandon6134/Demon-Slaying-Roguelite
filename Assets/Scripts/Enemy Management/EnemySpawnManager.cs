@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemySpawnManager : MonoBehaviour
 {
     public static EnemySpawnManager Instance;
-    [SerializeField] Pool enemyPool;
+    [SerializeField] Pool[] enemyPools;
     private bool isSpawning = true;
     private float spawnInterval = 3f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -18,9 +18,13 @@ public class EnemySpawnManager : MonoBehaviour
     {
         while(isSpawning)
         {
-            Vector3 spawnPos = new Vector3(Random.Range(-9f,9f),Random.Range(-4f,4f),0);
-            enemyPool.Spawn(spawnPos);
-            yield return new WaitForSeconds(spawnInterval);
+            foreach (Pool pool in enemyPools)
+            {
+                Vector3 spawnPos = new Vector3(Random.Range(-9f,9f),Random.Range(-4f,4f),0);
+                pool.Spawn(spawnPos);
+                yield return new WaitForSeconds(spawnInterval);
+            }
+            
         }
     }
 
