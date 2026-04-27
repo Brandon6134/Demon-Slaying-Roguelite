@@ -1,37 +1,35 @@
+using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemySpawnManager : MonoBehaviour
 {
     public static EnemySpawnManager Instance;
     [SerializeField] Pool[] enemyPools;
-    private bool isSpawning = true;
-    private float spawnInterval = 3f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         Instance = this;
-        StartCoroutine(SpawnInIntervals());
+
     }
 
-    IEnumerator SpawnInIntervals()
+    public void SpawnMiniWave(List<PoolValue> poolValues,int miniWaveNum)
     {
-        while(isSpawning)
+        foreach(PoolValue pV in poolValues)
         {
-            foreach (Pool pool in enemyPools)
+            int numToSpawn = pV.spawnNums[miniWaveNum];
+
+            for (int i = 0; i < numToSpawn; i++)
             {
-                Vector3 spawnPos = new Vector3(Random.Range(-9f,9f),Random.Range(-4f,4f),0);
-                pool.Spawn(spawnPos);
-                yield return new WaitForSeconds(spawnInterval);
+                Vector3 spawnPos = new Vector3(UnityEngine.Random.Range(-9f,9f),UnityEngine.Random.Range(-4f,4f),0);
+                pV.pool.Spawn(spawnPos);
             }
-            
         }
     }
 
-    public void DecreaseSpawnInterval(float decreaseIntervalAmount)
+    public Pool GetEnemyPool(int poolIndex)
     {
-        spawnInterval -= decreaseIntervalAmount;
-        if (spawnInterval < 0.5f) //cap off at 0.5 reset
-            spawnInterval = 0.5f;
+        return enemyPools[poolIndex];
     }
 }

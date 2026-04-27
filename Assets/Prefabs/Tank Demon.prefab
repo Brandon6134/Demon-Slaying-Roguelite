@@ -25,8 +25,12 @@ PrefabInstance:
       value: Tank Demon
       objectReference: {fileID: 0}
     - target: {fileID: 7588061793514589444, guid: b46dda38b95ea24449a81a5758e8bb2a, type: 3}
+      propertyPath: waveValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7588061793514589444, guid: b46dda38b95ea24449a81a5758e8bb2a, type: 3}
       propertyPath: chaseSpeed
-      value: 0.8
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7588061793514589444, guid: b46dda38b95ea24449a81a5758e8bb2a, type: 3}
       propertyPath: bloodEarned

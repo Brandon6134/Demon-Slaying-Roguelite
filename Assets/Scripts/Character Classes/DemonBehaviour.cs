@@ -11,6 +11,7 @@ public class DemonBehaviour : CharacterEntity
     private Transform playerTransform;
     public float chaseSpeed = 3f;
     public int bloodEarned = 2;
+    public float waveValue = 1f; //kill value of demon
     BasicAttack basicAttack;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -41,7 +42,7 @@ public class DemonBehaviour : CharacterEntity
         isStunned = false;
         isKnockedback = false;
 
-        EnemyWaveManager.Instance.AddKill();
+        EnemyWaveManager.Instance.AddKill(waveValue);
         BloodCurrencyManager.Instance.AddBloodAmount(bloodEarned);
         HUDManager.Instance.UpdateBloodText();
     }

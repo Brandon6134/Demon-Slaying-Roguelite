@@ -185,8 +185,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DemonBehaviour
   definedHealth: 5
   popupDamageText: {fileID: 7947127680326472455, guid: 85454d48f83f4cd4ea8237aea6b79655, type: 3}
-  chaseSpeed: 1
+  chaseSpeed: 2
   bloodEarned: 2
+  waveValue: 1
 --- !u!114 &7679328479711011026
 MonoBehaviour:
   m_ObjectHideFlags: 0
